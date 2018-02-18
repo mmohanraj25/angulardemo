@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Login Here</h1>
+    <div class="row">
+      <div class="offset-md-3"></div>
+        <div class="col-md-offset-5 col-md-3">
+          <div class="alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+        <form [formGroup]="loginForm" class="text-center">
+          <div class="form-group text-center">
+            <label for="name">Username</label>
+            <input  type ="text" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group text-center">
+            <label for="alterEgo">Password</label>
+            <input type="password" class="form-control" formControlName="pwd" id="alterEgo">
+          </div>
+          <button class="btn btn-success" (click)="validateForm()">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
