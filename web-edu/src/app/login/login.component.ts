@@ -5,17 +5,20 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+  
 })
 export class LoginComponent implements OnInit {
   
   loginForm: FormGroup;
   loginFormBuilder:FormBuilder;
   errorMessage:string;
+  infoMessage:string;
+  temp:string;
 
   constructor(loginFormBuilder:FormBuilder) {
     this.loginFormBuilder=loginFormBuilder;
    }
-  
+   
    ngOnInit() { 
     this.loginForm=this.loginFormBuilder.group({
     name:['',Validators.required],
@@ -23,17 +26,28 @@ export class LoginComponent implements OnInit {
    });
    
   }
-
-
   validateForm(){
     this.errorMessage=null;
   if(this.loginForm.get("name").touched && this.loginForm.get("name").errors){
     this.errorMessage="User Name Cannot be empty or blank";
     return;
   }
+  
   if(this.loginForm.get("pwd").touched && this.loginForm.get("pwd").errors){
     this.errorMessage="Password Cannot be empty or blank";
     return;
-  } 
+  }
+  
 }
+  submitForm(temp:String){
+    if((this.loginForm.get("name").value=="mohan") && (this.loginForm.get("pwd").value=="123")){
+      this.infoMessage="Login Successfull";
+    } 
+    else
+    {
+      this.infoMessage="Invalid Username/Password";    
+    }
+
+    
+  }
 }

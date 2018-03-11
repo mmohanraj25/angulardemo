@@ -1,10 +1,12 @@
 <div class="container">
-    <h1>Login Here</h1>
+    
     <div class="row">
-      <div class="offset-md-3"></div>
-        <div class="col-md-offset-5 col-md-3">
+      <div class="offset-md-4"></div>
+        <div class="col-md-3 bg-design">
+            <h2>LOGIN HERE</h2>
           <div class="alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
-        <form [formGroup]="loginForm" class="text-center">
+          <div class="alert-success" *ngIf="infoMessage">{{infoMessage}}</div>
+        <form [formGroup]="loginForm" class="text-center" #form="ngForm" (ngSubmit)="submitForm(form.value)">
           <div class="form-group text-center">
             <label for="name">Username</label>
             <input  type ="text" class="form-control" formControlName="name">
