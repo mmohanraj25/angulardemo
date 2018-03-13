@@ -11,7 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 let appRoutes: Routes =[
   {path: 'login', component: LoginComponent},
   {path: 'home', component: DashboardComponent},
-  {path: '', component: DashboardComponent},
+  {path: '', component: LoginComponent},
 ];
 
 @NgModule({
