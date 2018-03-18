@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <section class="login-form">
                 <form [formGroup]="loginForm" role="login">
-                    <img src="../../images/avatar_2x.png" class="img-responsive rounded-circle avatar-img" alt="User Profile" />
+                    <img src="../../images/avatar_2x.png" class="img-responsive img-circle avatar-img" alt="User Profile" />
                     <div class="alert-info alert-msg" *ngIf="errorMessage">{{errorMessage}}</div>
                     <input type="email" name="email" placeholder="Email" required class="form-control input-lg" formControlName="emailId"/>
                     <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" formControlName="password" />
@@ -15,7 +15,7 @@
                     </div>
                 </form>
                 <div class="form-links">
-                    <a href="#">www.website.com</a>
+                    <a>www.webluminous.com</a>
                 </div>
             </section>
         </div>
